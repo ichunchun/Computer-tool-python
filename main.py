@@ -11,7 +11,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowFlag(Qt.FramelessWindowHint) #无边框
         # self.setAttribute(Qt.WA_TranslucentBackground) #圆角背景透明
 
-        self.pushButton_close.clicked.connect(self.close)
+        self.pushButton_close.clicked.connect(lambda: self.close())
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
