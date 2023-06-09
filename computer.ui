@@ -40,8 +40,8 @@
         <rect>
          <x>0</x>
          <y>40</y>
-         <width>598</width>
-         <height>3</height>
+         <width>599</width>
+         <height>1</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -51,7 +51,8 @@
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 0);</string>
+        <string notr="true">color: rgb(255, 255, 0);
+background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -63,7 +64,7 @@
          <x>1</x>
          <y>240</y>
          <width>598</width>
-         <height>3</height>
+         <height>1</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -73,7 +74,7 @@
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -484,7 +485,7 @@
       <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>1</x>
+         <x>0</x>
          <y>241</y>
          <width>200</width>
          <height>160</height>
@@ -598,6 +599,11 @@
           </colorrole>
          </disabled>
         </palette>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton::pressed {
+	background-color: rgb(255, 0, 0);
+}</string>
        </property>
        <property name="text">
         <string>Activate
@@ -747,6 +753,11 @@ background-color: rgb(184, 0, 0);
          </disabled>
         </palette>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton::pressed {
+	background-color: rgb(255, 0, 0);
+}</string>
+       </property>
        <property name="text">
         <string>Change to
 
@@ -873,12 +884,49 @@ background-color: rgb(184, 0, 0);
          </disabled>
         </palette>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton::pressed {
+	background-color: rgb(255, 0, 0);
+}</string>
+       </property>
        <property name="text">
         <string>Save
 
 Mac-IP-name
 
 to txt</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>241</y>
+         <width>1</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_4">
+       <property name="geometry">
+        <rect>
+         <x>400</x>
+         <y>241</y>
+         <width>1</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </widget>

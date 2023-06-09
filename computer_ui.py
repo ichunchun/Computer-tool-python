@@ -34,21 +34,22 @@ class Ui_MainWindow(object):
         self.widget.setStyleSheet(u"background-color: rgb(30, 30, 30);")
         self.line = QFrame(self.widget)
         self.line.setObjectName(u"line")
-        self.line.setGeometry(QRect(0, 40, 598, 3))
+        self.line.setGeometry(QRect(0, 40, 599, 1))
         sizePolicy = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.line.sizePolicy().hasHeightForWidth())
         self.line.setSizePolicy(sizePolicy)
-        self.line.setStyleSheet(u"color: rgb(255, 255, 0);")
+        self.line.setStyleSheet(u"color: rgb(255, 255, 0);\n"
+"background-color: rgb(255, 255, 255);")
         self.line.setFrameShape(QFrame.HLine)
         self.line.setFrameShadow(QFrame.Sunken)
         self.line_2 = QFrame(self.widget)
         self.line_2.setObjectName(u"line_2")
-        self.line_2.setGeometry(QRect(1, 240, 598, 3))
+        self.line_2.setGeometry(QRect(1, 240, 598, 1))
         sizePolicy.setHeightForWidth(self.line_2.sizePolicy().hasHeightForWidth())
         self.line_2.setSizePolicy(sizePolicy)
-        self.line_2.setStyleSheet(u"")
+        self.line_2.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.line_2.setFrameShape(QFrame.HLine)
         self.line_2.setFrameShadow(QFrame.Sunken)
         self.widget_2 = QWidget(self.widget)
@@ -128,7 +129,7 @@ class Ui_MainWindow(object):
 
         self.pushButton = QPushButton(self.widget)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(1, 241, 200, 160))
+        self.pushButton.setGeometry(QRect(0, 241, 200, 160))
         palette3 = QPalette()
         palette3.setBrush(QPalette.Active, QPalette.Button, brush1)
         palette3.setBrush(QPalette.Active, QPalette.ButtonText, brush)
@@ -142,6 +143,9 @@ class Ui_MainWindow(object):
         palette3.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette3.setBrush(QPalette.Disabled, QPalette.Window, brush1)
         self.pushButton.setPalette(palette3)
+        self.pushButton.setStyleSheet(u"QPushButton::pressed {\n"
+"	background-color: rgb(255, 0, 0);\n"
+"}")
         self.pushButton_close = QPushButton(self.widget)
         self.pushButton_close.setObjectName(u"pushButton_close")
         self.pushButton_close.setGeometry(QRect(570, 13, 14, 14))
@@ -168,6 +172,9 @@ class Ui_MainWindow(object):
         palette4.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette4.setBrush(QPalette.Disabled, QPalette.Window, brush1)
         self.pushButton_3.setPalette(palette4)
+        self.pushButton_3.setStyleSheet(u"QPushButton::pressed {\n"
+"	background-color: rgb(255, 0, 0);\n"
+"}")
         self.pushButton_4 = QPushButton(self.widget)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setGeometry(QRect(401, 241, 200, 160))
@@ -184,6 +191,21 @@ class Ui_MainWindow(object):
         palette5.setBrush(QPalette.Disabled, QPalette.Base, brush1)
         palette5.setBrush(QPalette.Disabled, QPalette.Window, brush1)
         self.pushButton_4.setPalette(palette5)
+        self.pushButton_4.setStyleSheet(u"QPushButton::pressed {\n"
+"	background-color: rgb(255, 0, 0);\n"
+"}")
+        self.line_3 = QFrame(self.widget)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setGeometry(QRect(200, 241, 1, 160))
+        self.line_3.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.line_3.setFrameShape(QFrame.VLine)
+        self.line_3.setFrameShadow(QFrame.Sunken)
+        self.line_4 = QFrame(self.widget)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setGeometry(QRect(400, 241, 1, 160))
+        self.line_4.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.line_4.setFrameShape(QFrame.VLine)
+        self.line_4.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout.addWidget(self.widget)
 
