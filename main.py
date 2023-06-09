@@ -14,28 +14,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setWindowFlag(Qt.FramelessWindowHint) #无边框
         # self.setAttribute(Qt.WA_TranslucentBackground) #圆角背景透明
 
-        room = cfp.get("Main","room")
-        offset = cfp.get("Main","offset")
-        start = cfp.get("Main","start")
-        row = cfp.get("Main","row").upper()
-
-        number = ord(row)-65
-
-        IP_Pre3 = "192.168.33"
-
-        if room == '201':
-            IP_Pre3 = "192.168.24"
-        elif room == '216':
-            IP_Pre3 = "192.168.26"
-        elif room == '501':
-            IP_Pre3 = "192.168.35"
-        elif room == '308':
-            IP_Pre3 = "192.168.33"
-
-        IP_last = int(start) + int(offset)*number + 100
-
-        PC_name = room + row + start
-        Net_IP = IP_Pre3 + "." + str(IP_last)
+        Net_IP,Net_gateway,PC_name = calc_ip()
+        print(PC_name)
 
         self.label.setText(get_computer_name())
         self.label_2.setText(get_ip_addresses())

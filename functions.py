@@ -6,6 +6,12 @@ import winreg
 cfp = configparser.ConfigParser()
 cfp.read("Config.ini")
 
+def read_ini():
+    room = cfp.get("Main","room")
+    offset = cfp.get("Main","offset")
+    start = cfp.get("Main","start")
+    row = cfp.get("Main","row").upper()
+    return room,offset,start,row
 
 
 def get_mac_address():
@@ -38,11 +44,9 @@ def get_text():
 
 
 
-def auto_modify():
-    room = cfp.get("Main","room")
-    offset = cfp.get("Main","offset")
-    start = cfp.get("Main","start")
-    row = cfp.get("Main","row").upper()
+def calc_ip():
+
+    room,offset,start,row = read_ini()
 
     # print(ord(row)-64)
     number = ord(row)-65
@@ -60,13 +64,20 @@ def auto_modify():
 
     PC_name = room + row + start
     IP_last = int(start) + int(offset)*number + 100
+    Net_IP = IP_Pre3 + "." + str(IP_last)
+    Net_gateway = IP_Pre3 + "."+"1"
 
-    # print(PC_name) 
+    return Net_IP,Net_gateway,PC_name
+
+def auto_modify():
+    
+
+    room,offset,start,row = read_ini()
+    Net_IP,Net_gateway,PC_name = calc_ip()
+
 
     NetCard = "以太网"
-    Net_IP = IP_Pre3 + "." + str(IP_last)
     Net_MASK = "255.255.255.0"
-    Net_gateway = IP_Pre3 + "."+"1"
     Net_DNS1 = "114.114.114.114"
     Net_DNS2 = "8.8.8.8"
 
