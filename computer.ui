@@ -51,7 +51,7 @@
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(7, 7, 7);</string>
+        <string notr="true">color: rgb(255, 255, 0);</string>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
@@ -60,7 +60,7 @@
       <widget class="Line" name="line_2">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>1</x>
          <y>240</y>
          <width>598</width>
          <height>3</height>
@@ -73,36 +73,10 @@
         </sizepolicy>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(7, 7, 7);</string>
+        <string notr="true"/>
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-      <widget class="Line" name="line_3">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>240</y>
-         <width>3</width>
-         <height>180</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-      </widget>
-      <widget class="Line" name="line_4">
-       <property name="geometry">
-        <rect>
-         <x>400</x>
-         <y>240</y>
-         <width>3</width>
-         <height>180</height>
-        </rect>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
        </property>
       </widget>
       <widget class="QWidget" name="widget_2" native="true">
@@ -633,28 +607,6 @@ Windows10
 Office</string>
        </property>
       </widget>
-      <widget class="Line" name="line_5">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>398</y>
-         <width>598</width>
-         <height>3</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(7, 7, 7);</string>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
       <widget class="QPushButton" name="pushButton_close">
        <property name="geometry">
         <rect>
@@ -683,7 +635,7 @@ background-color: rgb(184, 0, 0);
          <x>201</x>
          <y>241</y>
          <width>200</width>
-         <height>158</height>
+         <height>160</height>
         </rect>
        </property>
        <property name="palette">
@@ -809,7 +761,7 @@ background-color: rgb(184, 0, 0);
          <x>401</x>
          <y>241</y>
          <width>200</width>
-         <height>158</height>
+         <height>160</height>
         </rect>
        </property>
        <property name="palette">
