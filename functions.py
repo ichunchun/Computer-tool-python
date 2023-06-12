@@ -97,28 +97,6 @@ def auto_modify():
     ModifyIP(NetCard, Net_IP, Net_MASK, Net_gateway, Net_DNS1, Net_DNS2)
 
 
-    # def set_computer_name(name):
-    #     key_path = r'SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName'
-    #     key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, key_path, 0, winreg.KEY_ALL_ACCESS)
-    #     winreg.SetValueEx(key, '', 0, winreg.REG_SZ, name)
-    #     winreg.CloseKey(key)
-
-    #     key_path = r'SYSTEM\CurrentControlSet\Control\ComputerName\ActiveComputerName'
-    #     key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, key_path, 0, winreg.KEY_ALL_ACCESS)
-    #     winreg.SetValueEx(key, '', 0, winreg.REG_SZ, name)
-    #     winreg.CloseKey(key)
-
-    #     key_path = r'SYSTEM\CurrentControlSet\Services\Tcpip\Parameters'
-    #     key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, key_path, 0, winreg.KEY_ALL_ACCESS)
-    #     winreg.SetValueEx(key, 'Hostname', 0, winreg.REG_SZ, name)
-    #     winreg.SetValueEx(key, 'NV Hostname', 0, winreg.REG_SZ, name)
-    #     winreg.CloseKey(key)
-
-
-
-    # set_computer_name(PC_name)
-
-
     # 打开指定的注册表项
     def change_name(path,value_name):
         key = winreg.CreateKey(winreg.HKEY_LOCAL_MACHINE, path)
