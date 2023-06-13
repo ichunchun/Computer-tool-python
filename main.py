@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QMainWindow, QApplication, QFileDialog
+from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6.QtCore import Qt
 from computer_ui import Ui_MainWindow
 from functions import *
@@ -27,6 +27,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         def save_mac(self):
             get_text()
             self.pushButton_4.setText("Save Already\n\n请勿重复点击")
+            self.pushButton_4.setEnabled(False)
 
         def change(self):
             auto_modify()
