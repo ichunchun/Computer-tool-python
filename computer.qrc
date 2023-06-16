@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="image">
-    <file>Chevron Right.png</file>
-    <file>Chevron Left.png</file>
-  </qresource>
-</RCC>
