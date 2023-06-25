@@ -86,13 +86,22 @@ def auto_modify():
 
     def ModifyIP(NetCard, Net_IP, Net_MASK, Net_gateway, DNS1, DNS2):
 
-        cmd = f'netsh interface ip set address name={NetCard} static {Net_IP} {Net_MASK} {Net_gateway} 1'
-        dns_cmd = f'netsh interface ip set dns name={NetCard} static {DNS1} primary'
-        dns_backup_cmd = f'netsh interface ip add dns name={NetCard} addr={DNS2} index=2'
+        # cmd = f'netsh interface ip set address name={NetCard} static {Net_IP} {Net_MASK} {Net_gateway} 1'
+        # dns_cmd = f'netsh interface ip set dns name={NetCard} static {DNS1} primary'
+        # dns_backup_cmd = f'netsh interface ip add dns name={NetCard} addr={DNS2} index=2'
         
-        subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.Popen(dns_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        subprocess.Popen(dns_backup_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # subprocess.Popen(dns_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # subprocess.Popen(dns_backup_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # 构建设置 IP 地址的命令
+        set_address_command = f"netsh interface ip set address name=\"{NetCard}\" static {Net_IP} {Net_MASK} {Net_gateway}"
+
+        # 构建设置 DNS 的命令
+        set_dns_command = f"netsh interface ip set dns name=\"{DNS1}\" static {' '.join(DNS2)}"
+
+        # 使用绝对路径调用命令提示符（CMD）并执行命令
+        subprocess.call(["C:\\Windows\\System32\\cmd.exe", "/c", set_address_command])
+        subprocess.call(["C:\\Windows\\System32\\cmd.exe", "/c", set_dns_command])
 
     ModifyIP(NetCard, Net_IP, Net_MASK, Net_gateway, Net_DNS1, Net_DNS2)
 
