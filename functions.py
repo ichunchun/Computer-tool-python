@@ -86,13 +86,6 @@ def auto_modify():
 
     def ModifyIP(NetCard, Net_IP, Net_MASK, Net_gateway, DNS1, DNS2):
 
-        # cmd = f'netsh interface ip set address name={NetCard} static {Net_IP} {Net_MASK} {Net_gateway} 1'
-        # dns_cmd = f'netsh interface ip set dns name={NetCard} static {DNS1} primary'
-        # dns_backup_cmd = f'netsh interface ip add dns name={NetCard} addr={DNS2} index=2'
-        
-        # subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        # subprocess.Popen(dns_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        # subprocess.Popen(dns_backup_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         # 构建设置 IP 地址的命令
         set_address_command = f"netsh interface ip set address name=\"{NetCard}\" static {Net_IP} {Net_MASK} {Net_gateway}"
 
