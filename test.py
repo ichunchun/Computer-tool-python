@@ -1,10 +1,11 @@
+import configparser
+import winreg
 import requests
-import re
+import random,re
 
+cfp = configparser.ConfigParser()
+cfp.read("Config.ini")
 
-# url = 'http://www.kuwo.cn/play_detail/325760'
-url = "http://www.kuwo.cn/api/v1/www/music/playUrl?mid=325760"
+netcard = cfp.get("Main","netcard")
 
-response = requests.get(url)
-
-print(response.text)
+print(netcard)

@@ -14,10 +14,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         completer = QCompleter(["ip change", "auto change", "name change", "autodesk fix", "orange"])
         self.lineEdit.setCompleter(completer)
         self.pushButton.clicked.connect(lambda: self.Run())
-
+        room,offset,start,row = read_ini()
         Net_IP,Net_gateway,PC_name = calc_ip()
-        label_text = Net_IP + '   |   ' + PC_name
-        self.label.setText(label_text)
+
+        if room == '201' or room == '216' or room == '501' or room == '308':
+            label_text = Net_IP + '   |   ' + PC_name
+            self.label.setText(label_text)
+        else:
+            label_text = "One Key To Any Where!"
+            self.label.setText(label_text)
         
         self.setWindowFlag(Qt.FramelessWindowHint) #无边框
         self.setAttribute(Qt.WA_TranslucentBackground) #背景透明
