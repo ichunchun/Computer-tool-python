@@ -2,6 +2,8 @@ import wmi
 import subprocess
 import configparser
 import winreg
+import requests
+import random,re
 
 cfp = configparser.ConfigParser()
 cfp.read("Config.ini")
@@ -39,7 +41,7 @@ def get_text():
     mac_addresses = get_mac_address().replace(":", "-")
     computer_name = get_computer_name()
     ip_addresses = get_ip_addresses()
-    with open('ttt.txt', 'a') as f:
+    with open('MAC-TO-IP.txt', 'a') as f:
         f.write(computer_name+"   "+ip_addresses+"    "+mac_addresses+"   "+computer_name + '\n')
 
 
@@ -76,7 +78,7 @@ def auto_modify():
     Net_IP,Net_gateway,PC_name = calc_ip()
 
 
-    NetCard = "以太网"
+    NetCard = cfp.get("Main","NetCard")
     Net_MASK = "255.255.255.0"
     Net_DNS1 = "114.114.114.114"
     Net_DNS2 = "8.8.8.8"
@@ -119,3 +121,15 @@ def auto_modify():
     cfp.set("Main", "start", str(temp_number))
 
     cfp.write(open("Config.ini", "w"))
+
+
+def vip_film():
+    url = 'http://www.qmjx.vip/'
+
+    response = requests.get(url)
+
+    results = re.findall(r'<option value="(.*?)">', response.text)
+
+    vip_url = results[random.randint(0, len(results)-1)]
+
+    return vip_url
