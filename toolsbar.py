@@ -1,5 +1,5 @@
 import sys
-from PySide6.QtWidgets import QMainWindow, QApplication,QCompleter
+from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QKeyEvent
 from toolbar_ui import Ui_MainWindow
@@ -11,11 +11,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
         self.setupUi(self)
-        completer = QCompleter(["ip change", "auto change", "name change", "autodesk fix", "orange"])
-        self.lineEdit.setCompleter(completer)
-        self.pushButton.clicked.connect(lambda: self.Run())
-        room,offset,start,row = read_ini()
-        Net_IP,Net_gateway,PC_name = calc_ip()
+        room,_,_,_ = read_ini()
+        Net_IP,_,PC_name = calc_ip()
 
         if room == '201' or room == '216' or room == '501' or room == '308':
             label_text = Net_IP + '   |   ' + PC_name
@@ -35,6 +32,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             url = vip_film() + self.lineEdit.text()  # 要打开的网址
             print(url)
             webbrowser.open(url)
+        elif self.words == "iccz":
+            label_text = "1.vip 解析支持 bilibili manguo tengxun youku.\n 2.自动修改|修改IP|修改计算机名|修复autodesk|提升管理员权限"
+            self.label_2.setText(label_text)
         else:
             pass
 
@@ -51,8 +51,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def keyPressEvent(self, event: QKeyEvent):
         if event.key() == Qt.Key_Escape:
             self.close()
-
-
 
 
 if __name__ == "__main__":

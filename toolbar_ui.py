@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(600, 81)
+        MainWindow.resize(600, 107)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -34,6 +34,7 @@ class Ui_MainWindow(object):
         self.widget_2.setObjectName(u"widget_2")
         self.horizontalLayout = QHBoxLayout(self.widget_2)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(-1, -1, -1, 0)
         self.label = QLabel(self.widget_2)
         self.label.setObjectName(u"label")
         palette = QPalette()
@@ -108,6 +109,26 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.widget)
 
+        self.widget_3 = QWidget(self.centralwidget)
+        self.widget_3.setObjectName(u"widget_3")
+        self.horizontalLayout_3 = QHBoxLayout(self.widget_3)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, -1)
+        self.label_2 = QLabel(self.widget_3)
+        self.label_2.setObjectName(u"label_2")
+        palette2 = QPalette()
+        palette2.setBrush(QPalette.Active, QPalette.WindowText, brush)
+        palette2.setBrush(QPalette.Active, QPalette.Text, brush)
+        palette2.setBrush(QPalette.Inactive, QPalette.WindowText, brush)
+        palette2.setBrush(QPalette.Inactive, QPalette.Text, brush)
+        self.label_2.setPalette(palette2)
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_2)
+
+
+        self.verticalLayout.addWidget(self.widget_3)
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -119,5 +140,6 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Run!!!", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u8f93\u5165iccz\u83b7\u53d6\u90e8\u5206\u529f\u80fd\u6307\u4ee4", None))
     # retranslateUi
 
