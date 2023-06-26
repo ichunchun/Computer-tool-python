@@ -13,6 +13,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         room,_,_,_ = read_ini()
         Net_IP,_,PC_name = calc_ip()
+        self.pushButton.clicked.connect(self.Run)
 
         if room == '201' or room == '216' or room == '501' or room == '308':
             label_text = Net_IP + '   |   ' + PC_name
